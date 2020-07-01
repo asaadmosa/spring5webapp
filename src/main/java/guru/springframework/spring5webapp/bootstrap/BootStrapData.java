@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created by jt on 12/23/19.
  */
-//this tells him to check it as component and run it
+//this tells spring that it is spring manage component
 @Component
 public class BootStrapData implements CommandLineRunner {
 
