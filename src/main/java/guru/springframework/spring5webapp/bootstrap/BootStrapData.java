@@ -10,12 +10,13 @@ import org.springframework.stereotype.Component;
 /**
  * Created by jt on 12/23/19.
  */
+//this tells him to check it as component and run it
 @Component
 public class BootStrapData implements CommandLineRunner {
 
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
-
+//constractor
     public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
@@ -23,12 +24,13 @@ public class BootStrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
+    //create examples of the classes 
         Author eric = new Author("Eric", "Evans");
         Book ddd = new Book("Domain Driven Design", "123123");
         eric.getBooks().add(ddd);
         ddd.getAuthors().add(eric);
-
+        
+        //this will save them to the DB
         authorRepository.save(eric);
         bookRepository.save(ddd);
 
